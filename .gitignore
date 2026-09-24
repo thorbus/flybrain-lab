@@ -11,3 +11,14 @@ ios/FlyBrain.xcodeproj/xcuserdata/
 ios/FlyBrain.xcodeproj/project.xcworkspace/xcuserdata/
 ios/build/
 DerivedData/
+
+# Local experiments and private settings
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+runs/
+checkpoints/

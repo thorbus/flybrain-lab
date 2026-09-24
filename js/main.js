@@ -1802,7 +1802,10 @@ function drawLegs(state, dtScale) {
 			jitter = anim.legJitter[legIdx] * (BRAIN.stimulate.lightLevel === 0 ? 0.5 : 1.0);
 		}
 
-		// Compute hip and knee angles
+		// Optional local choreography preset; absent in brain-response mode.
+        var danceLeg = window.FlyDancePose && window.FlyDancePose.legs && window.FlyDancePose.legs[legIdx];
+        if (danceLeg) { hipMod=danceLeg.hip; kneeMod=danceLeg.knee; walkOffset=0; jitter=0; }
+        // Compute hip and knee angles
 		var hipAngle = (hipMod + walkOffset + jitter) * side;
 		var kneeAngle = kneeMod * side;
 
@@ -1821,7 +1824,7 @@ function drawLegs(state, dtScale) {
 		var seg2EndY = seg1EndY + Math.sin(kneeAngleAbs) * BODY.legSeg2;
 
 		// Third segment (tarsus) -- slight hook
-		var tarsusAngle = kneeAngleAbs + side * 0.3;
+		var tarsusAngle = kneeAngleAbs + side * (danceLeg ? danceLeg.tarsus : 0.3);
 		var seg3EndX = seg2EndX + Math.cos(tarsusAngle) * BODY.legSeg3;
 		var seg3EndY = seg2EndY + Math.sin(tarsusAngle) * BODY.legSeg3;
 

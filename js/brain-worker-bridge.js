@@ -446,7 +446,13 @@
 			segs.push({name: 'DRIVE_GROOM', intensity: STIM_INTENSITY * d.groom});
 		}
 
-		// Sensory stimulation
+		// Experimental audio envelope injection; this is an engineered mapping,
+        // not a validated biological model of hearing or musical entrainment.
+        if (BRAIN.musicIntensity > 0) {
+            segs.push({name: 'MECH_JO', intensity: STIM_INTENSITY * BRAIN.musicIntensity});
+            segs.push({name: 'ANTENNAL_MECH', intensity: STIM_INTENSITY * BRAIN.musicIntensity});
+        }
+        // Sensory stimulation
 		if (BRAIN.stimulate.touch) {
 			segs.push({name: 'MECH_BRISTLE', intensity: STIM_INTENSITY});
 			if (BRAIN.stimulate.touchLocation === 'head' ||
