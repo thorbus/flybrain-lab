@@ -56,4 +56,4 @@ A 3D body, rigged legs and wings, lights, and a scene can be connected to either
 - `js/brain-worker-bridge.js`: sensory injection and aggregation of neuron activity.
 - `js/main.js`: body rendering and upstream behavioral movement.
 
-Training, saved learned controllers, automatic beat detection, and a 3D body are future work, not implemented features.
+A stylized 3D body with articulated legs, wings, and a neon studio is now implemented. It renders choreography or the existing behavior model; it does not include a physics-trained controller. Training, saved learned controllers, and automatic beat detection remain future work.

@@ -22,6 +22,8 @@
   let running = false, useSong = false, mode = 'dance';
   let last = 0, phase = 0, pulse = 0, beat = -1, level = 0;
   let savedView, pose=null, routine='bollywood';
+  // Read-only snapshot for renderers. The 3D stage does not drive neural activity.
+  window.FlyDanceState = () => ({running, mode, phase, pulse, level, pose, routine});
   function sound() {
     if (ac) return;
     ac = new AudioContext(); master = ac.createGain(); master.gain.value = Number($('dance-volume').value)/100;
