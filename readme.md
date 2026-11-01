@@ -35,9 +35,3 @@ The monitor and overlay use live simulation telemetry. The firing count is the n
 Implementation: `js/fly-scene.js` renders the Three.js scene; `js/fly-rig.js` calculates the body and leg poses; `css/fly-scene.css` adapts the controls for desktop and narrow windows. All assets and Three.js are local.
 
 Validate the rig with `node --test tests/fly-rig.test.cjs`.
-
-## Repository
-
-This repository lives independently at `/Users/sudhanshu/Desktop/flybrain-lab`. Its original Git history and MIT license are preserved. The source project is recorded as the `upstream` remote; there is no personal GitHub origin or publication configured.
-
-The original project documentation is saved in [docs/UPSTREAM-README.md](docs/UPSTREAM-README.md). It describes upstream behavior, not validation of this remix. Original source: https://github.com/snedea/flybrain.
